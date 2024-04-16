@@ -46,7 +46,7 @@ impl ProductService {
         NotificationService.notify(&product.product_type, "DELETED", product.clone());
         return Ok(Json::from(product));
     }
-    }
+    
     pub fn publish(id:usize) -> Result<Product>{
         let product_opt: Option<Product> = ProductRepository::get_by_id(id);
         if product_opt.is_none(){
