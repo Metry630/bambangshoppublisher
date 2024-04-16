@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [X] Commit: `Implement delete function in Subscriber repository.`
     -   [X] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [X] Commit: `Create Notification service struct skeleton.`
+    -   [X] Commit: `Implement subscribe function in Notification service.`
+    -   [X] Commit: `Implement subscribe function in Notification controller.`
+    -   [X] Commit: `Implement unsubscribe function in Notification service.`
+    -   [X] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -85,4 +85,9 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-2
 
+1. Separating Model, Service, and Repository follows the Single Responsibility Principle. Models handle data representation and related logic, Services deal with non-data-related logic, and Repositories manage data storage and CRUD operations. This approach makes the application modular and easier to understand, improving abstraction and task focus.
+
+2. Even if combined in one file, Model, Repository, and Service should be viewed as separate entities for clarity. Models define data structures and operations, Repositories manage data storage, and Services handle application logic. This separation may seem complex initially but enhances code readability and maintainability.
+
+3. Postman aids in backend testing by verifying request handling. It ensures expected responses, helping identify errors like unexpected server responses. Particularly useful when frontend and backend development are separate, Postman ensures proper communication between components.
 #### Reflection Publisher-3
