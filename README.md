@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [X] Commit: `Implement unsubscribe function in Notification controller.`
     -   [X] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [X] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [X] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [X] Commit: `Implement publish function in Program service and Program controller.`
+    -   [X] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -91,3 +91,8 @@ This is the place for you to write reflections:
 
 3. Postman aids in backend testing by verifying request handling. It ensures expected responses, helping identify errors like unexpected server responses. Particularly useful when frontend and backend development are separate, Postman ensures proper communication between components.
 #### Reflection Publisher-3
+1. The type of observer used is push. We can tell because the NotificationService actively sends notifications to all subscribers whenever there's an update in a particular product. And each subscriber who hasn't actively requested data gets those notifications.
+
+2. So, the upside of using the pull observer pattern is that each subscriber actively and regularly requests data. That way, they always have fresh data and don't need to worry like, "This data was last updated 16 days ago, is it still accurate? Or did I miss something?" But here's the catch: all this active requesting can sometimes be a downside. It might be inefficient and put unnecessary strain on the app, especially if there are tons of subscribers asking for updates frequently. That can really slow down the app.
+
+3. Now, if they don't use multithreading, handling notifications could take forever. Imagine a notification takes 1 second, and there are 500 subscribers connected to one product. If it's done in a single-threaded way, there's a queue that takes 500 seconds to process, meaning the last user in line waits a whopping 500 seconds for their notification! But with multithreading, each notification process runs at the same time, so every user only needs 1 second to get their notification (well, assuming there's one process per thread, which isn't always the case in real-world scenarios).
